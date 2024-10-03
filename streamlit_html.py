@@ -125,8 +125,20 @@ september_date_options = ['all'] + sorted(df_absen[df_absen['Date'].dt.to_period
 
 st.title("ABSEN")
 
-# Add a title for the app
-st.title("Absen Record and Location")
+if menu == "Tampilkan Data":
+    st.subheader("Data Absen")
+    st.dataframe(df_absen)  # Display the data in a table
+
+elif menu == "Tampilkan Visualisasi Map":
+    # Streamlit UI components for filtering the map
+    selected_name = st.selectbox('Nama:', name_options)
+    selected_august_date = st.selectbox('August:', august_date_options)
+    selected_september_date = st.selectbox('September:', september_date_options)
+
+    st.subheader("Map Visualisation")
+    
+    # Create and display map based on selection
+    my_map = create_map(selected_name, selected_august_date, selected_september_date)
 
 # Sidebar with two options: 'Data' and 'Map'
 menu = st.sidebar.radio("Menu", ("Tampilkan Data", "Tampilkan Visualisasi Map"))
