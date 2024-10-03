@@ -18,7 +18,7 @@ st.markdown("""
     }
     h1 {
         color: #4e73df;
-        text-align: center;
+        text-align: left;  /* Align title to the left */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 48px;
     }
@@ -37,13 +37,20 @@ st.markdown("""
     }
     .stSidebar {
         background-color: #333;
+    }
+    .css-1d391kg p {  /* Sidebar text styling */
         color: white;
+        font-size: 16px;
+    }
+    .css-1d391kg .stRadio {
+        color: white;  /* Make radio button text white */
     }
     .stDataframe {
         font-size: 14px;
     }
     </style>
     """, unsafe_allow_html=True)
+
 
 # Load the data
 url = 'https://raw.githubusercontent.com/antoniusawe/folium/main/request-pak-anto-agt%20to%20sep.csv'
