@@ -22,32 +22,6 @@ st.markdown("""
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 48px;
     }
-    .stButton>button {
-        background-color: #4CAF50;
-        color: white;
-        font-size: 16px;
-        border-radius: 8px;
-    }
-    .stButton>button:hover {
-        background-color: #45a049;
-    }
-    .menu-label {
-        font-weight: bold;
-        font-size: 18px;
-    }
-    .stSidebar {
-        background-color: #333;
-    }
-    .css-1d391kg p {  /* Sidebar text styling */
-        color: white;
-        font-size: 16px;
-    }
-    .css-1d391kg .stRadio {
-        color: white;  /* Make radio button text white */
-    }
-    .stDataframe {
-        font-size: 14px;
-    }
     </style>
     """, unsafe_allow_html=True)
 
