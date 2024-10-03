@@ -11,7 +11,8 @@ import pandas as pd
 from streamlit_folium import st_folium
 
 # Load the data
-df_absen = pd.read_csv(r"D:\Python Script\Absen\data\request-pak-anto-agt to sep.csv")  # Update this to the correct path
+url = 'https://raw.githubusercontent.com/antoniusawe/folium/main/request-pak-anto-agt%20to%20sep.csv'
+df_absen = pd.read_csv(url)
 
 # Function to create the map with selected Name and Date
 def create_map(selected_name='all', selected_august_date='all', selected_september_date='all'):
