@@ -128,6 +128,8 @@ selected_name = st.selectbox('Name:', name_options)
 selected_august_date = st.selectbox('August:', august_date_options)
 selected_september_date = st.selectbox('September:', september_date_options)
 
+st.title("Absen Record and Location")
+
 # Create and display map based on selection
 my_map = create_map(selected_name, selected_august_date, selected_september_date)
 
