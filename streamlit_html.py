@@ -132,7 +132,7 @@ selected_september_date = st.selectbox('September:', september_date_options)
 my_map = create_map(selected_name, selected_august_date, selected_september_date)
 
 # Use st_folium to display the map
-st_folium(my_map, width=1000, height=600)
+st_folium(my_map, width=600, height=600)
 
 
 # In[ ]:
