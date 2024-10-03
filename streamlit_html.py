@@ -123,12 +123,14 @@ name_options = ['all'] + df_absen['Name'].dropna().unique().tolist()
 august_date_options = ['all'] + sorted(df_absen[df_absen['Date'].dt.to_period('M') == '2024-08']['Date'].dropna().unique().tolist())
 september_date_options = ['all'] + sorted(df_absen[df_absen['Date'].dt.to_period('M') == '2024-09']['Date'].dropna().unique().tolist())
 
+st.title("ABSEN")
+
 # Streamlit UI components
-selected_name = st.selectbox('Name:', name_options)
+selected_name = st.selectbox('Nama:', name_options)
 selected_august_date = st.selectbox('August:', august_date_options)
 selected_september_date = st.selectbox('September:', september_date_options)
 
-st.title("Absen Record and Location")
+st.write("Absen Record and Location")
 
 # Create and display map based on selection
 my_map = create_map(selected_name, selected_august_date, selected_september_date)
