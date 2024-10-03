@@ -123,10 +123,11 @@ name_options = ['all'] + df_absen['Name'].dropna().unique().tolist()
 august_date_options = ['all'] + sorted(df_absen[df_absen['Date'].dt.to_period('M') == '2024-08']['Date'].dropna().unique().tolist())
 september_date_options = ['all'] + sorted(df_absen[df_absen['Date'].dt.to_period('M') == '2024-09']['Date'].dropna().unique().tolist())
 
-st.title("ABSEN")
+# Add a title for the app
+st.title("Absen Record and Location")
 
 # Sidebar with two options: 'Data' and 'Map'
-menu = st.sidebar.radio("Menu", ("Tampilkan Data", "Tampilkan Visualisasi Map"))
+menu = st.sidebar.radio("Menu", ("Tampilkan Data", "Tampilkan Visualisasi Map"), key="menu_key")
 
 if menu == "Tampilkan Data":
     st.subheader("Data Absen")
@@ -134,17 +135,14 @@ if menu == "Tampilkan Data":
 
 elif menu == "Tampilkan Visualisasi Map":
     # Streamlit UI components for filtering the map
-    selected_name = st.selectbox('Nama:', name_options)
-    selected_august_date = st.selectbox('August:', august_date_options)
-    selected_september_date = st.selectbox('September:', september_date_options)
+    selected_name = st.selectbox('Nama:', name_options, key="name_select")
+    selected_august_date = st.selectbox('August:', august_date_options, key="august_select")
+    selected_september_date = st.selectbox('September:', september_date_options, key="september_select")
 
     st.subheader("Map Visualisation")
     
     # Create and display map based on selection
     my_map = create_map(selected_name, selected_august_date, selected_september_date)
-
-# Sidebar with two options: 'Data' and 'Map'
-menu = st.sidebar.radio("Menu", ("Tampilkan Data", "Tampilkan Visualisasi Map"))
 
 # Use st_folium to display the map
 st_folium(my_map, width=600, height=600)
