@@ -10,6 +10,41 @@ from folium.plugins import Draw, LocateControl, Geocoder, MarkerCluster
 import pandas as pd
 from streamlit_folium import st_folium
 
+# Custom CSS styles for the page
+st.markdown("""
+    <style>
+    body {
+        background-color: #f0f2f6;
+    }
+    h1 {
+        color: #4e73df;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 48px;
+    }
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    .stButton>button:hover {
+        background-color: #45a049;
+    }
+    .menu-label {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .stSidebar {
+        background-color: #333;
+        color: white;
+    }
+    .stDataframe {
+        font-size: 14px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # Load the data
 url = 'https://raw.githubusercontent.com/antoniusawe/folium/main/request-pak-anto-agt%20to%20sep.csv'
 df_absen = pd.read_csv(url)
