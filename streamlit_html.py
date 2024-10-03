@@ -125,6 +125,9 @@ september_date_options = ['all'] + sorted(df_absen[df_absen['Date'].dt.to_period
 
 st.title("ABSEN")
 
+# Sidebar with two options: 'Data' and 'Map'
+menu = st.sidebar.radio("Menu", ("Tampilkan Data", "Tampilkan Visualisasi Map"))
+
 if menu == "Tampilkan Data":
     st.subheader("Data Absen")
     st.dataframe(df_absen)  # Display the data in a table
