@@ -131,7 +131,7 @@ menu = st.sidebar.radio("Menu", ("Tampilkan Data", "Tampilkan Visualisasi Map"),
 
 if menu == "Tampilkan Data":
     st.subheader("Data Absen")
-    st.dataframe(df_absen)  # Display the data in a table
+    st.dataframe(df_absen)    
 
 elif menu == "Tampilkan Visualisasi Map":
     # Streamlit UI components for filtering the map
@@ -144,8 +144,8 @@ elif menu == "Tampilkan Visualisasi Map":
     # Create and display map based on selection
     my_map = create_map(selected_name, selected_august_date, selected_september_date)
 
-# Use st_folium to display the map
-st_folium(my_map, width=600, height=600)
+    # Use st_folium to display the map
+    st_folium(my_map, width=600, height=600)
 
 
 # In[ ]:
